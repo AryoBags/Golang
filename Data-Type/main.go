@@ -11,9 +11,11 @@ func main() {
 	var variableName1 string = "hello word"
 	//short variable
 	variableName2 := "hello world"
+	variableName6 := "hello world"
 
 	fmt.Println(variableName1)
 	fmt.Println(variableName2)
+	fmt.Println(variableName5)
 
 	// primitive: boolean, INT, FLOTAL, string
 
