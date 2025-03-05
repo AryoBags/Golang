@@ -11,7 +11,7 @@ func main() {
 	var variableName1 string = "hello word"
 	//short variable
 	variableName2 := "hello world"
-	variableName6 := "hello world"
+	variableName5 := "hello world"
 
 	fmt.Println(variableName1)
 	fmt.Println(variableName2)
