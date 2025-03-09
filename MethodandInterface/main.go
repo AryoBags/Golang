@@ -85,5 +85,5 @@ func main(){
 	fmt.Printf("Type: %T, value %v\n", mySque, mySque)
 	measureShape(myRetacle)
 	measureShape(myCir)
-	measureShape(mySque)``
+	measureShape(mySque)
 }
