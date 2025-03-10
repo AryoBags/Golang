@@ -86,4 +86,5 @@ func main(){
 	measureShape(myRetacle)
 	measureShape(myCir)
 	measureShape(mySque)
+	measureShape(mySque)
 }
