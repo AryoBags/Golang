@@ -51,7 +51,7 @@ func seedDB() {
 			Type:      MenuTypeFood,
 		},
 	}
-	drinkMenu := []MenuItem{
+	drinkMenu := []MenuItem {
 		{
 			Name:      "Soda",
 			OrderCode: "SD01",
