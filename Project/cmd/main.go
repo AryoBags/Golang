@@ -22,64 +22,14 @@ func main() {
 	e.Logger.Fatal(e.Start(":14045"))
 }
 
-type MenuType string
 
-const (
-	MenuTypeFood  = "food"
-	MenuTypeDrink = "drink"
-)
 
-type MenuItem struct {
-	Name      string
-	OrderCode string
-	Price     int
-	Type      MenuType
-}
 
-func seedDB() {
-	foodMenu := []MenuItem{
-		{
-			Name:      "Pizza",
-			OrderCode: "PZ01",
-			Price:     10,
-			Type:      MenuTypeFood,
-		},
-		{
-			Name:      "Burger",
-			OrderCode: "BG01",
-			Price:     8,
-			Type:      MenuTypeFood,
-		},
-	}
-	drinkMenu := []MenuItem {
-		{
-			Name:      "Soda",
-			OrderCode: "SD01",
-			Price:     2,
-			Type:      MenuTypeDrink,
-		},
-		{
-			Name:      "Es Teh",
-			OrderCode: "EH01",
-			Price:     1,
-			Type:      MenuTypeDrink,
-		},
-	}
-	fmt.Println(foodMenu, drinkMenu)
 
-	db, err := gorm.Open(postgres.Open(dbAddress))
-	if err != nil {
-		panic(err)
-	}
-	db.AutoMigrate(&MenuItem{})
-	if err := db.First(&MenuItem{}).Error; err == gorm.ErrRecordNotFound {
-		db.Create(&foodMenu)
-		db.Create(&drinkMenu)
-	}
 
-}
 func getMenu(c echo.Context) error {
 	menuType := c.FormValue("menu_type")
+	
 	db, err := gorm.Open(postgres.Open(dbAddress))
 	if err != nil {
 		panic(err)
